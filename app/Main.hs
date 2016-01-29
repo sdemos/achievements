@@ -1,6 +1,11 @@
+{-# LANGUAGE DataKinds #-}
+{-# LANGUAGE TypeOperators #-}
+
 module Main where
 
-import Lib
+import Network.Wai.Handler.Warp (run)
+import Servant
+import Achievements (AchievementsAPI, server)
 
 main :: IO ()
-main = someFunc
+main = run 8000 $ serve (Proxy :: Proxy AchievementsAPI) server
