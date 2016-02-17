@@ -17,8 +17,10 @@ library
   hs-source-dirs:      src
   exposed-modules:     Achievements
   build-depends:       base
+                     , aeson
                      , servant
                      , servant-server
+                     , text
                      , warp
   default-language:    Haskell2010
 
@@ -28,7 +30,6 @@ executable achievements
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
                      , achievements
-                     , servant
                      , servant-server
                      , warp
   default-language:    Haskell2010
